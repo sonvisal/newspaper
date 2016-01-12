@@ -21,10 +21,13 @@ Router.route('/register', {
 Router.route('/login', {
     name: 'login'
 });
+Router.route("/profile",{
+	name:"profile"
+});
+
 Router.route('/article/edit/:_id', {
     name: 'updatearticle',
     data:function(){
         return article.findOne({_id:this.params._id})
     }
 });
-

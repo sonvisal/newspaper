@@ -22,19 +22,26 @@
         <form class="form-login" action="index.html">
             <h2 class="form-login-heading">registration now</h2>
             <div class="login-wrap">
+            {{#if registerError}}
+                                <div class="alert alert-danger" style="padding:15px;" role="alert">
+                                  <span style="display:inline-block" class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                  <span style="display:inline-block" class="sr-only">Error:</span>
+                                {{registerErrormsg}}
+                                </div>
+                    {{/if}}
                 <p>Enter your personal details below</p>
-                <input type="text" class="form-control" placeholder="Full Name" autofocus>
-                <input type="text" class="form-control" placeholder="User Name" autofocus>
-                <input type="text" class="form-control" placeholder="Email" autofocus>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="text" class="form-control"  id="fullname" placeholder="Full Name" autofocus>
+                <input type="text" class="form-control" id ="username" placeholder="User Name" autofocus>
+                <input type="text" class="form-control" id="email" placeholder="Email" autofocus>
+                <input type="password" class="form-control" id="password" placeholder="Password">
                 <input type="password" class="form-control" placeholder="Re-type Password">
                 <label class="checkbox">
                     <input type="checkbox" value="agree this condition"> I agree to the Terms of Service and Privacy Policy
                 </label>
-                <button class="btn btn-lg btn-login btn-block" type="submit">Submit</button>
+                <button class="btn btn-lg btn-login btn-block" id="register" type="submit">Submit</button>
                 <div class="registration">
                     Already Registered.
-                    <a class="" href="login.html">
+                    <a class="" href="/login">
                         Login
                     </a>
                 </div>
