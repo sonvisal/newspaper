@@ -1,0 +1,8 @@
+<template name="view">
+	<div class="container">
+		{{#each getArticle}}
+			<p><a style="text-decoration:none; color:#000;" href="{{url}}">{{title}}</a> (<a href="{{url}}">{{url}}</a>)</p> 
+			<span style="font-size:8px; color:#828282;">Posted by {{fullname}}</span><br/>
+		{{/each}}
+	</div>
+</template>

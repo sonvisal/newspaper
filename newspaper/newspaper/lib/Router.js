@@ -5,3 +5,10 @@ Router.configure({
 Router.route('/', {
     name: 'home'
 });
+Router.route('/article', {
+    name: 'article'
+});
+
+Router.route('/view', {
+    name: 'view'
+});
