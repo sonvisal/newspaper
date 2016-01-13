@@ -14,3 +14,34 @@ Template.article.events({
 		Router.go('/view');
 	}
 });
+Template.admin.helpers({
+	allArticle: function(){
+		return article.find({});
+	}
+});
+Template.admin.events({
+	"click #remove": function(e, tpl) {
+		var id=this._id;
+		Meteor.call('deleteArt', id);
+		
+	} 
+});
+Template.updatearticle.events({
+	"click #updateart": function(e, tpl) {
+		var id=this._id;
+		var fullname = $('#name').val();
+		var title = $('#title').val();
+		var url = $('#url').val();
+		var text = $('#text').val();
+		var attr={
+	  		fullname:fullname,
+	  		title:title,
+	  		url:url,
+	  		text:text
+	  	};
+		Meteor.call('updateArt',id,attr);
+		Router.go("admin");
+		return false;
+		
+	} 
+});
