@@ -1,8 +1,35 @@
 <template name="view">
-	<div class="container">
+	<!-- <div class="container">
 		{{#each getArticle}}
 			<p><a style="text-decoration:none; color:#000;" href="{{url}}">{{title}}</a> (<a href="{{url}}">{{url}}</a>)</p> 
 			<span style="font-size:8px; color:#828282;">Posted by {{fullname}}</span><br/>
 		{{/each}}
+	</div> -->
+
+
+<div class="container bootstrap snippet">
+    <div class="row">
+		<div class="col-md-12">
+		    <div class="blog-comment">
+				<h3 class="text-success">All News</h3>
+                <hr/>
+                {{#each getArticle}}
+				<ul class="comments">
+				<li class="clearfix">
+				  <img src="http://bootdey.com/img/Content/user_1.jpg" class="avatar" alt="">
+				  <div class="post-comments">
+				          <a style="text-decoration:none; color:#000;" href="{{url}}">{{title}}</a> 
+				          (<a href="{{url}}">{{url}}</a>)
+				          <p class="meta" style="font-size:8px; color:#828282;">Posted by {{fullname}} | {{date}}</p>
+				      <p>
+				      </p>
+				  </div>
+				</li>
+				</ul>
+				{{/each}}
+			</div>
+		</div>
 	</div>
+</div>
+
 </template>
