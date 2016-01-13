@@ -15,3 +15,9 @@ Router.route('/view', {
 Router.route('/admin', {
     name: 'admin'
 });
+Router.route('/register', {
+    name: 'register'
+});
+Router.route('/login', {
+    name: 'login'
+});
