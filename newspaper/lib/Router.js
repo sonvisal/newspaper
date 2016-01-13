@@ -21,3 +21,6 @@ Router.route('/register', {
 Router.route('/login', {
     name: 'login'
 });
+Router.route("/profile",{
+	name:"profile"
+});

@@ -21,19 +21,26 @@
     <div class="container">
         <form class="form-login" action="index.html">
             <h2 class="form-login-heading">sign in now</h2>
+            {{#if loginError}}
+                            <div class="alert alert-danger" role="alert">
+                                <span style="display:inline-block" class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span style="display:inline-block" class="sr-only">Error:</span>
+                            {{loginErrormsg}}
+                            </div>
+             {{/if}}
             <div class="login-wrap">
-                <input type="text" class="form-control" placeholder="User ID" autofocus>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="text" class="form-control" id="username" placeholder="User ID" autofocus>
+                <input type="password" class="form-control" id="password" placeholder="Password">
                 <label class="checkbox">
                     <input type="checkbox" value="remember-me"> Remember me
                     <span class="pull-right">
                         <a data-toggle="modal" href="#myModal"> Forgot Password?</a>
                     </span>
                 </label>
-                <button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-login btn-block" id="login" type="submit">Sign in</button>
                 <div class="registration">
                     Don't have an account yet?
-                    <a class="" href="register.html">
+                    <a class="" href="/register">
                         Create an account
                     </a>
                 </div>
