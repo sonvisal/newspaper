@@ -1,3 +1,4 @@
+
 <template name="admin">
 		<div id="navbar" class="navbar navbar-default navbar-collapse h-navbar">
 			
@@ -283,5 +284,50 @@
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 			</a>
-		</div><!-- /.main-container -->
+		<!-- croud admin -->
+
+		 <div class="col-lg-8">
+                       <div class="widget-box">
+                <div class="widget-title">
+                    <h2 style="color:gray">List Article</h2>
+                </div>
+                <div class="widget-container table-responsive">
+                    <table class="table table-hover table-striped order-table table-green">
+                    <thead>
+                        <tr>
+                            
+                            <th>#</th>
+                            <th>fullname</th>
+                            <th>title</th>
+                            <th>url</th>
+                            <th>text</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each allArticle}}
+                        <tr>
+                           <td>#</td>
+    						<td>{{fullname}}</td>
+                            <td>{{title}}</td>
+                            <td>{{url}}</td>
+                            <td>{{text}}</td>
+                            <td>
+                                <!-- <button class="btn btn-xs btn-primary" type="button"><i class="glyphicon glyphicon-eye-open"></i>View</button> -->
+                                <a href="article/edit/{{_id}}"><button class="btn btn-xs btn-primary" type="button"><i class="glyphicon glyphicon-pencil"></i>Edit</button></a>
+
+                                <button class="btn btn-xs btn-danger" type="button" id="remove"><i class="glyphicon glyphicon-remove"></i>Delete</button>
+                                
+                            </td>
+                        </tr>
+                        {{/each}}
+                        
+                    </tbody>
+                </table>    
+                </div>
+            </div>
+                        <!-- /.panel -->
+         </div>
+    </div><!-- /.main-container -->
+>>>>>>> 526f22e14119cf9d00d3dd19c5f5ff81d8e564f0
 </template>
