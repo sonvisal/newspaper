@@ -5,3 +5,6 @@
 Meteor.publish("article", function () {
   return article.find({});
 });
+Meteor.publish("comments", function () {
+  return comments.find({});
+});

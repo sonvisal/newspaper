@@ -9,9 +9,6 @@ Router.route('/article', {
     name: 'article'
 });
 
-Router.route('/view', {
-    name: 'view'
-});
 Router.route('/admin', {
     name: 'admin'
 });
@@ -20,4 +17,11 @@ Router.route('/register', {
 });
 Router.route('/login', {
     name: 'login'
+});
+Router.route('/comments/:_id', {
+    name: 'comments',
+  data: function(){
+	var id = this.params._id;
+	return article.findOne({_id: id})
+  }
 });

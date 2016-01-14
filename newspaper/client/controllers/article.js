@@ -5,7 +5,8 @@ Template.article.events({
 		var title = $('#title').val();
 		var url = $('#url').val();
 		var text = $('#text').val();
-		Meteor.call('postArticle', fullname,title,url,text);
-		Router.go('/view');
+		var date = new Date();
+		Meteor.call('postArticle', fullname,title,url,text,date);
+		Router.go('/');
 	}
 });
