@@ -29,12 +29,17 @@
                         <a class="navbar-brand" href="index.html"><i class="fa fa-cubes"></i> <strong>News</strong></a>
                     </div>
                     <!-- end:navbar-header -->
+                     
                     <ul class="nav navbar-nav navbar-right top-menu">
-                        <li>
-                            <input type="text" class="form-control input-sm search" placeholder="Search">
-                        </li>
-                        <!-- user login dropdown start-->
+                        {{> esInput index="article" class="form-control input-sm search" placeholder="Search..."}}
+                             {{#esEach index="article"}}
+                                <li>{{title}}</li>       
+               
+                            {{/esEach}}
+                       
                     </ul>
+
+                        <!-- user login dropdown start-->                    
                 </div>
             </nav>
             <!-- end:navbar -->

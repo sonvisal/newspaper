@@ -39,3 +39,6 @@ Router.route('/article/edit/:_id', {
         return article.findOne({_id:this.params._id})
     }
 });
+Router.route("/search",{
+    name:"search"
+});
