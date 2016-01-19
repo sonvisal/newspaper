@@ -26,20 +26,21 @@
                 <div class="container">
                     <!-- start:navbar-header -->
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="index.html"><i class="fa fa-cubes"></i> <strong>News</strong></a>
+                        <!-- <a class="navbar-brand" href="index.html"><i class="fa fa-cubes"></i> <strong>News</strong></a> -->
+                        <img src="/images/PNN.png" style="width: 70px">
                     </div>
-                    <!-- end:navbar-header -->
-                     
-                    <ul class="nav navbar-nav navbar-right top-menu">
-                        {{> esInput index="article" class="form-control input-sm search" placeholder="Search..."}}
-                             {{#esEach index="article"}}
-                                <li>{{title}}</li>       
-               
-                            {{/esEach}}
-                       
-                    </ul>
-
-                        <!-- user login dropdown start-->                    
+                    <!-- end:navbar-header -->                     
+                   
+                        <ul class="nav navbar-nav navbar-right top-menu">
+                        <li>
+                            <!-- <input type="text" class="form-control input-sm search" placeholder="Search"> -->
+                            {{> esInput index= "article" class="form-control input-sm search" placeholder="Search"}}
+                                {{#esEach index="article"}}
+                                    {{title}}
+                                 {{/esEach}}
+                        </li>
+                        <!-- user login dropdown start-->
+                    </ul>             
                 </div>
             </nav>
             <!-- end:navbar -->
@@ -60,14 +61,21 @@
                         <div class="collapse navbar-collapse navbar-ex1-collapse">
                             <ul class="nav navbar-nav">
                                 <li>
-                                    <a href="/">
+                                    <a href="#">
                                         <div class="text-center">
                                             <i class="fa fa-home fa-3x"></i><br>
-                                            Home
+                                            News
                                         </div>
                                     </a>
                                 </li>
-                 
+                                <li class="dropdown">
+                                    <a href="#">
+                                        <div class="text-center">
+                                            <i class="fa fa-laptop fa-3x"></i><br>
+                                            Comments
+                                        </div>
+                                    </a>
+                                </li>
                                 <li class="dropdown">
                                     <a href="/article">
                                         <div class="text-center">
@@ -114,26 +122,13 @@
                                   {{#each getArticle}}
                                     <tr>
                                         <td><a href="{{url}}">{{title}}</a></td>
-										<td><span style="font-size:11px;">Posted by {{fullname}}</span></td>
-										<td><span style="font-size:11px;">{{livestamp  date}}</span></td>
+										<td><span style="font-size:11px; color:#828282;">Posted by {{fullname}}</span></td>
+										<td><span style="font-size:11px; color:#828282;">{{timeSince date}} ago</span></td>
                                         
                                        
 										 <td>
-				<!-- <div class="col-xs-3 text-left">
-                  <h5 class="gray">{{totalLike}} like</h5>
-                </div>	 
-                <div class="col-xs-3 text-left">
-
-                  <a href="" class="socail">
-                  <span id="{{_id}}" class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary{{getstatus}} likeUnlike {{_id}}" aria-hidden="true" style="color:{{getColor}}">
-                  <span style="color:#000;">Like</span></span></a>
-                </div> -->
-                                            <div class="col-xs-3 text-left">
-                                                <h5 class="gray">{{totalLike}}</h5>
-                                            </div>
-                                            <button class="btn btn-info btn-xs" id="like">
-                                                <span id="{{_id}}" class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary{{getstatus}} likeUnlike {{_id}}" aria-hidden="true" style="color:{{getColor}}"></span>
-                                            </button>  
+											 
+                                            <button class="btn btn-info btn-xs" id="like"><span class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary"></span></button>  
                                         </td>
 										
 										<td>
