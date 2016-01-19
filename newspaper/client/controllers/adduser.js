@@ -3,23 +3,19 @@ Session.set('page_msg',"");
 
 Template.manageuser.events({
 	"click #adduser":function(e){
-		alert("hello");
         e.preventDefault();
-        var firstname=$("#firstname").val();
-        var lastname=$("#lastname").val();
+        var fullname=$("#fullname").val();
         var username = $('#username').val();
         var email = $('#email').val();
         var password = $('#password').val();
-        var rerole=$("#role").val();
-        console.log(username+""+email+""+password+""+lastname+""+firstname);
-        var result = users.find({email:email});
+        var role=$("#role").val();
+         //console.log(username+""+email+""+password+""+fullname);
+        var result = users.find({emails:email});
 			var msg = '';
-		if( result.count() > 0 || firstname == "" || lastname == ""|| email == ''|| username=="" || password == '' || rerole == ''){
+		if( result.count() > 0 || fullname == "" || email == ''|| username=="" || password == '' || role == ''){
 
-			if( firstname == '' )
+			if( fulltname == '' )
 				msg += 'Firt Name is required.';
-			if( lastname == '' )
-				msg += 'Last Name is required.';
 			if( username == '' )
 				msg += 'User Name is required.';
 			if( email == '' )
@@ -37,7 +33,7 @@ Template.manageuser.events({
 			Session.set('page_msg',msg);
 
 		}else{
-			Meteor.call('addUser',firstname,lastname,email,username, password, rerole,function(err){
+			Meteor.call('adduser',fullname,email,username, password, role,function(err){
 				if(err){
 					console.log(err.reason);
 					Session.set("adduserError",err.reason);
@@ -46,11 +42,56 @@ Template.manageuser.events({
 				}
 			});
 		}
-    	}
+    },
+    "click #remove": function(e, tpl) {
+		e.preventDefault();
+		var id = this._id;
+		Meteor.call('deleteUser',id);
+	}
+});
+Template.edituser.events({
+    "click #updateUser": function(e, tpl) {
+		e.preventDefault();
+		//alert("update"); 
+		//var id = Meteor.userId();
+		var id = this._id;
+		var fullname =$('#fullname').val();
+		var username =$('#username').val();
+		var email = $('#email').val();
+		var role = $('#role').val();
+		console.log(fullname,username,email,role);
 
-	});
+		var attr={
+		
+            emails:[{
+				address:email
+			}],
+            profile:{
+                fullname:fullname,
+				username:username
+            }
+        };
+        var attrroles = {
+            mygroup:[role]
+        };
+		
+		console.log(attr);
+        Meteor.call('updateuser', id,attr);
+        Meteor.call('updateroles', id,attrroles);
+        Router.go("/manageuser");
+      }
+});
 
-Template.manageuser.helper({
+Template.manageuser.helpers({
+	updateuser: function(){
+		var id = Meteor.userId();
+		return Meteor.users.find({_id:id});
+		
+   	},
+	allUserlist: function(){
+		return Meteor.users.find();
+		
+	},
 	getmsg: function(){
 		var msg = Session.get('page_msg',msg);
 		if( msg !="" ) return msg;

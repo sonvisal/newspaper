@@ -13,39 +13,16 @@ Template.comments.events({
   
   });
   Template.comments.helpers({
-	getArticle: function(){
-		return article.find({});
+	getArticle: function(id){
+		var article_id =this._id;
+		var result = article.findOne({_id:article_id});
+		return result;
 	},
-	getComments: function(_id){
-     com = comments.findOne({article_id:_id});
-	 return com.txt;
-	},
-
- timeSince: function(date) {
-
-    var seconds = Math.floor((new Date() - date) / 1000);
-
-    var interval = Math.floor(seconds / 31536000);
-
-    if (interval > 1) {
-        return interval + " years";
-    }
-    interval = Math.floor(seconds / 2592000);
-    if (interval > 1) {
-        return interval + " months";
-    }
-    interval = Math.floor(seconds / 86400);
-    if (interval > 1) {
-        return interval + " days";
-    }
-    interval = Math.floor(seconds / 3600);
-    if (interval > 1) {
-        return interval + " hours";
-    }
-    interval = Math.floor(seconds / 60);
-    if (interval > 1) {
-        return interval + " minutes";
-    }
-    return Math.floor(seconds) + " seconds";
-}
+	getComments: function(id){
+     var article_id =this._id;
+	 console.log(article_id);
+		var result = comments.find({article_id:article_id});
+		console.log(result);
+		return result;
+	}
 });
