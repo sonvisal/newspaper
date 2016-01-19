@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Meteor.methods({
 	postArticle: function(fullname,title,url,text,date) {
 		var attr={

@@ -1,0 +1,65 @@
+<template name="manageuser">
+	<div id="navbar" class="navbar navbar-default navbar-collapse h-navbar">
+			
+			<div class="navbar-container" id="navbar-container">
+				{{> navleft}} 
+			</div>	
+		</div>
+		<div class="main-container">
+				<div class="col-lg-4 col-lg-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Add New User
+                        </div>
+                        <div class="panel-body">
+							<form accept-charset="UTF-8" role="form">
+							{{#if adduserError}}
+                                <div class="alert alert-danger" style="padding:15px;" role="alert">
+                                  <span style="display:inline-block" class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                  <span style="display:inline-block" class="sr-only">Error:</span>
+                                {{adduserErrormsg}}
+                                </div>
+                    		{{/if}}
+								<fieldset>
+									<div class="form-group">
+										<input type="text" class="form-control" id="firstname" placeholder="First Name">
+									</div>
+								  <div class="form-group">
+										<input type="text" class="form-control" id="lastname" placeholder="Last Name">
+								  </div>
+								  <div class="form-group">
+										<input type="text" class="form-control" id="username" placeholder="User Name">
+								  </div>
+								  <div class="form-group">
+										<input type="email" class="form-control" id="email" placeholder="Email">
+								  </div>
+								  <div class="form-group">
+										<input type="password" class="form-control" id="password" placeholder="Password">
+								  </div>
+								  <div class="form-group">
+										<label>Role</label>
+										<select name="language" id="role" class="form-control">
+											<option value="" style="display:none">Select Role</option>
+											<option value="Admin">Admin</option>
+											<option value="Member">Memeber</option>
+										</select>
+								   </div>
+									<div class="row">
+										<div class="col-xs-4 col-sm-4">
+											<div class="form-group">
+												<input type="submit" value="Add User" id="adduser" class="btn btn-primary btn-block">
+											</div>
+										</div>
+										<div class="col-xs-4 col-sm-4">
+											<div class="form-group">
+												<input type="submit" value="Close" id="close" class="btn btn-danger btn-block">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+			   	 </div>
+			    </div>
+			</div>
+</template>

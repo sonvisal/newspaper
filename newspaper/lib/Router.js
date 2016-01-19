@@ -19,6 +19,9 @@ Router.route('/register', {
 Router.route('/login', {
     name: 'login'
 });
+Router.route('/manageuser', {
+    name: 'manageuser'
+});
 Router.route('/comments/:_id', {
     name: 'comments',
   data: function(){
