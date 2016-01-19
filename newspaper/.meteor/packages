@@ -29,6 +29,5 @@ sanjo:jasmine
 velocity:html-reporter
 xolvio:cucumber
 velocity:console-reporter
-
-cfs:filesystem
 cfs:standard-packages
+cfs:filesystem
