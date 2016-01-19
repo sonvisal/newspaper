@@ -10,9 +10,11 @@ var IR_BeforeHooks = {
     },
 }
 var routerNameAdmin=[
-  'admin',
-  'manageuser',
-  'managepost',
-  'profile'
+	'admin',
+	'manageuser',
+	'managepost',
+	'profile'
 ];
+
 Router.before(IR_BeforeHooks.isAdmin, {only:routerNameAdmin});
+
