@@ -1,10 +1,9 @@
 <template name="manageuser">
-	<div id="navbar" class="navbar navbar-default navbar-collapse h-navbar">
-			
-			<div class="navbar-container" id="navbar-container">
-				{{> navleft}} 
-			</div>	
-		</div>
+	<div id="navbar" class="navbar navbar-default navbar-collapse h-navbar">	
+		<div class="navbar-container" id="navbar-container">
+			{{> navleft}} 
+		</div>	
+	</div>
 		<div class="main-container">
 				<div class="col-lg-4 col-lg-offset-1">
                     <div class="panel panel-default">
@@ -22,11 +21,8 @@
                     		{{/if}}
 								<fieldset>
 									<div class="form-group">
-										<input type="text" class="form-control" id="firstname" placeholder="First Name">
+										<input type="text" class="form-control" id="fullname" placeholder="Full Name">
 									</div>
-								  <div class="form-group">
-										<input type="text" class="form-control" id="lastname" placeholder="Last Name">
-								  </div>
 								  <div class="form-group">
 										<input type="text" class="form-control" id="username" placeholder="User Name">
 								  </div>
@@ -61,5 +57,50 @@
 						</div>
 			   	 </div>
 			    </div>
+
+			    <!-- Manage user list -->
+				<div class="col-lg-6">
+				<div class="widget-box">
+					<div class="widget-title">
+						<h2>List All Users</h2>
+					</div>
+					<div class="widget-container table-responsive">
+						<table class="table table-hover table-striped order-table table-green">
+							<thead>
+								<tr>
+									<th>First Name</th>
+									<!-- <th>Last Name</th> -->
+									<th>User Name</th>
+									<th>Email</th>
+									<th>Role</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								{{#each allUserlist}}
+								<tr>
+									<td>{{profile.fullname}}</td>
+									<td>{{profile.username}}</td>
+									{{#each emails}}
+										<td>{{address}}</td>
+									{{/each}}
+									<td>{{roles.mygroup}}</td>
+									<td>
+										<a href="/admin/edituser/{{_id}}">
+											<button class="btn btn-xs btn-success" type="button">
+											<i class="glyphicon glyphicon-pencil"></i>Edit</button>
+										</a>
+											<button class="btn btn-xs btn-danger" type="button" id="remove">
+											<i class="glyphicon glyphicon-remove"></i>Delete</button>
+									</td>
+									
+								</tr>
+								{{/each}}
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
+		<!-- Eng manage user list -->
+		</div>
 </template>

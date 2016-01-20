@@ -41,3 +41,9 @@ Router.route('/article/edit/:_id', {
         return article.findOne({_id:this.params._id})
     }
 });
+Router.route('/admin/edituser/:_id', {
+    name: 'edituser',
+    data:function(){
+        return users.findOne({_id:this.params._id})
+    }
+});
