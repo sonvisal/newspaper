@@ -23,8 +23,10 @@ fortawesome:fontawesome
 accounts-ui
 accounts-password
 alanning:roles
+matteodem:easy-search@=1.6.3
 copleykj:livestamp
 sanjo:jasmine
 velocity:html-reporter
 xolvio:cucumber
 velocity:console-reporter
+

@@ -1,4 +1,3 @@
-
 Router.configure({
     layoutTemplate: 'mainLayout'
 });
@@ -28,8 +27,16 @@ Router.route('/manageuser', {
 Router.route('/comments/:_id', {
     name: 'comments',
   data: function(){
-	var id = this.params._id;
+	var userId = Meteor.userId();
+	if (!userId ){
+		//Session.set('like_login',content_id);
+	         Router.go('login');	
+	}
+	else{
+		var id = this.params._id;
 	return article.findOne({_id: id})
+	}
+	
   }
 });
 Router.route("/profile",{
@@ -44,9 +51,15 @@ Router.route('/article/edit/:_id', {
         return article.findOne({_id:this.params._id})
     }
 });
+
+Router.route("/search",{
+    name:"search"
+});
+
 Router.route('/admin/edituser/:_id', {
     name: 'edituser',
     data:function(){
         return users.findOne({_id:this.params._id})
     }
+
 });

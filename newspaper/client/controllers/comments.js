@@ -5,10 +5,10 @@ Template.comments.events({
 	   var name = $("#name").val();
 	   var txt = $("#txt").val();
 	   var date = new Date();
-	   
-	   Meteor.call('addcomment', name,txt,date,article_id);
+	  	
+		Meteor.call('addcomment', name,txt,date,article_id);
 		Router.go('/');
-	  
+
   }
   
   });

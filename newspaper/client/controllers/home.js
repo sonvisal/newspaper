@@ -35,6 +35,15 @@ getCountComment: function(_id){
 		var an = comments.find({article_id:_id}).count();
 		return an;
 	}
+});
 
-
+Template.search.events({
+    "keyup #textsearch": function(e, tpl) {
+        alert("prees");
+        var textsearch = tpl.$("#textsearch").val();
+        if (textsearch == '') {
+            // getCurRouter = Session.get("CURRENTROUTER");
+             Router.go(search);
+        }
+    }
 });
