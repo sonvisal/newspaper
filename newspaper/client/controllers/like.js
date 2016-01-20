@@ -60,7 +60,18 @@ Template.home.events({
             $(elementId).removeClass("glyphicon-thumbs-up");
             $(elementId).addClass("glyphicon-heart");
             $(elementId).css("color", "red"); 
-            Meteor.call('insertlike',content_id,status,'1');   
+            Meteor.call('insertlike',content_id,status,'1');  
+            //article.update(like);
+            var sum = 0;
+            var result = like.find({contentId:content_id});
+                result.forEach(function(transaction){
+                sum = sum + transaction.status;
+            });
+            alert(sum);
+            alert(content_id);
+            Meteor.call("addlike",content_id,sum);
+            alert("seccess");
+
         }
     },
     'click .glyphicon-heart':function(e){

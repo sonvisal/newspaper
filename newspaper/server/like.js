@@ -14,6 +14,11 @@ Meteor.methods({
   		var userId = Meteor.userId();
   
   		return like.remove({contentId:content_id, user:userId});
+ 	},
+ 	addlike:function(content_id,sum){
+    var arrt={
+      like:like
+    }
+ 		return article.update({_id:content_id,$set: {arrt}});
  	}
-	
 });

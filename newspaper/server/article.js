@@ -6,6 +6,7 @@ Meteor.methods({
 			title:title,
 			url:url,
 			text:text,
+			like:0,
 			date:date
 		};
 		return article.insert(attr);

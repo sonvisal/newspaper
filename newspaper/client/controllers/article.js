@@ -7,6 +7,7 @@ Template.article.events({
 		var url = $('#url').val();
 		var text = $('#text').val();
 		var date = new Date();
+		
 		Meteor.call('postArticle', fullname,title,url,text,date);
 		Router.go('/');
 	}
