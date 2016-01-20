@@ -38,6 +38,7 @@ Template.home.helpers({
 });
 Session.set('like_login',"");
 Template.home.events({
+	
 	'click .glyphicon-thumbs-up':function(e){
         e.preventDefault();
         var content_id = this._id;
