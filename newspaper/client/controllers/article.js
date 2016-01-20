@@ -6,21 +6,22 @@ Template.article.events({
 		var title = $('#title').val();
 		var url = $('#url').val();
 		var text = $('#text').val();
-		var d = new Date();
-		var date = d.getDate();
-		var year = d.getFullYear();
-		var month = d.getMonth()+1;
-		var time = date+"/"+month+"/"+year;
-		Meteor.call('postArticle', fullname,title,url,text,time);
-		Router.go('/view');
+		var date = new Date();
+		Meteor.call('postArticle', fullname,title,url,text,date);
+		Router.go('/');
 	}
 });
-Template.admin.helpers({
+
+Template.article.helpers({
+
+});
+
+Template.managepost.helpers({
 	allArticle: function(){
 		return article.find({});
 	}
 });
-Template.admin.events({
+Template.managepost.events({
 	"click #remove": function(e, tpl) {
 		var id=this._id;
 		Meteor.call('deleteArt', id);
