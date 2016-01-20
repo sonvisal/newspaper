@@ -3,12 +3,21 @@ Template.comments.events({
 	   e.preventDefault();
 	   var article_id =this._id;
 	   var name = $("#name").val();
+	   var userId = Meteor.userId();
 	   var txt = $("#txt").val();
 	   var date = new Date();
-	   
-	   Meteor.call('addcomment', name,txt,date,article_id);
+	   if(!Meteor.userId()) {
+             
+	         Session.set('comment_login',content_id);
+	         Router.go('login');
+        }
+		else{
+			
+			  Meteor.call('addcomment', name,txt,date,article_id);
 		Router.go('/');
 	  
+		}
+	 
   }
   
   });
