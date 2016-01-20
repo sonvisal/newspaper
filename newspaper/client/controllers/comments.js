@@ -5,10 +5,16 @@ Template.comments.events({
 	   var name = $("#name").val();
 	   var txt = $("#txt").val();
 	   var date = new Date();
-	  	
+	   var userId = Meteor.userId();
+	  	if(!Meteor.userId()) {
+             
+	         Session.set('comment_login',article_id);
+	         Router.go('/login');
+        } 
+        else{
 		Meteor.call('addcomment', name,txt,date,article_id);
 		Router.go('/');
-
+	}
   }
   
   });
