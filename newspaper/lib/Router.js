@@ -10,16 +10,17 @@ Router.route('/article', {
     name: 'article'
 });
 
-Router.route('/admin', {
-    name: 'admin'
+Router.route('/managepost', {
+    name: 'managepost'
 });
+
 Router.route('/register', {
     name: 'register'
 });
 Router.route('/login', {
     name: 'login'
 });
-Router.route('/manageuser', {
+Router.route('/admin', {
     name: 'manageuser'
 });
 Router.route('/comments/:_id', {
