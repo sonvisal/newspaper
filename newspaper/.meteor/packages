@@ -26,3 +26,5 @@ accounts-password
 alanning:roles
 sanjo:jasmine
 velocity:html-reporter
+xolvio:cucumber
+velocity:console-reporter
