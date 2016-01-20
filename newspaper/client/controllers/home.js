@@ -37,13 +37,38 @@ getCountComment: function(_id){
 	}
 });
 
-Template.search.events({
-    "keyup #textsearch": function(e, tpl) {
-        alert("prees");
-        var textsearch = tpl.$("#textsearch").val();
-        if (textsearch == '') {
-            // getCurRouter = Session.get("CURRENTROUTER");
-             Router.go(search);
-        }
-    }
-});
+// Session.set("MYSEARCH", "");
+// Template.home.events({
+//     "click #mysearch": function(e, tpl) {
+//         e.preventDefault();
+//         var mysearch = tpl.$("#textsearch").val();
+//         Session.set("MYSEARCH", mysearch);
+//         // var curRouter = Router.current().route.path()
+//             // alert("current "+curRouter);
+//         // Session.set("CURRENTROUTER", curRouter);
+//         Router.go("search")
+//     },
+//     "keyup #textsearch": function(e, tpl) {
+//         // alert("prees");
+//         var textsearch = tpl.$("#textsearch").val();
+//         if (textsearch == '') {
+//             getCurRouter = Session.get("CURRENTROUTER");
+//             Router.go("search");
+//         }
+//     }
+// });
+// Template.search.helpers({
+//     allarticle: function() {
+//         var getMysearch = Session.get("MYSEARCH");
+//         if (getMysearch != "") {
+//             console.log("key:" + getMysearch);
+//             var result = article.find({
+//                 title: {
+//                     $regex: new RegExp(getMysearch, "i")
+//                 }
+//             });
+//             return result;
+//         } else return;
+
+//     }
+//     });

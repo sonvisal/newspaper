@@ -3,7 +3,6 @@ Template.toparticle.helpers({
 
         var result = like.find({});
         return result;
-
 	}
 });
 

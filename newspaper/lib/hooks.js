@@ -1,4 +1,3 @@
-
 var IR_BeforeHooks = {
     isAdmin: function(pause) {
       console.log('sreyden hook');   
