@@ -1,5 +1,6 @@
 Template.toparticle.helpers({
 	getTopArticle:function(){
+
         var result = like.find({});
         var idarray=[]
         result.forEach(function (result) {

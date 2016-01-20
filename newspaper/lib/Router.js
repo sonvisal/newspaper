@@ -21,7 +21,7 @@ Router.route('/register', {
 Router.route('/login', {
     name: 'login'
 });
-Router.route('/manageuser', {
+Router.route('/admin', {
     name: 'manageuser'
 });
 Router.route('/comments/:_id', {

@@ -1,4 +1,3 @@
-
 var IR_BeforeHooks = {
     isAdmin: function(pause) {
       console.log('sreyden hook');   
@@ -16,5 +15,5 @@ var routerNameAdmin=[
 	'managepost',
 	'profile'
 ];
+Router.before(IR_BeforeHooks.isAdmin, {only:routerNameAdmin});
 
- Router.before(IR_BeforeHooks.isAdmin, {only:routerNameAdmin});
