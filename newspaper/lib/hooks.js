@@ -10,7 +10,7 @@ var IR_BeforeHooks = {
           this.next();
         }
     },
-
+}
 var routerNameAdmin=[
 	'admin',
 	'manageuser',
