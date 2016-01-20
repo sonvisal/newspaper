@@ -24,3 +24,5 @@ fortawesome:fontawesome
 accounts-ui
 accounts-password
 alanning:roles
+sanjo:jasmine
+velocity:html-reporter
