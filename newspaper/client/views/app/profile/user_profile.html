@@ -1,5 +1,4 @@
-<template name="profile">
-    <!-- start:wrapper -->
+<template name="profilewrong">
     <div id="wrapper">
         <div class="header-top">
             <!-- start:navbar -->
@@ -73,63 +72,54 @@
 
         <!-- start:main -->
 		<div class="container">
-		<span style="padding:30px;"></span>
-      	
-      		<h1 class="page-header">Edit Profile</h1>
-		  	<div class="row">
+        <span style="padding:30px;"></span>
+		  <h1 class="page-header">Edit Profile</h1>
+		  <!-- <div class="row"> -->
 			<!-- left column -->
-			{{#each users}}
 			<div class="col-md-4 col-sm-6 col-xs-12">
 			  <div class="text-center">
-			  	{{#if haveImage}}
-					<img src="/uploads/{{getProfileImage}}" class="avatar img-circle img-thumbnail" alt="avatar">
-				{{else}}
-					<img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
-				{{/if}}
+				<img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
 				<h6>Upload a different photo...</h6>
-				<input type="file" id = "image" class="text-center center-block well well-sm">
+				<input type="file" class="text-center center-block well well-sm">
 			  </div>
 			</div>
 			<!-- edit form column -->
 			<div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+			  <div class="alert alert-info alert-dismissable">
+				<a class="panel-close close" data-dismiss="alert">×</a> 
+				<i class="fa fa-coffee"></i>
+				This is an <strong>.alert</strong>. Use this to show important messages to the user.
+			  </div>
 			  <h3>Personal info</h3>
 			  <form class="form-horizontal" role="form">
 				<div class="form-group">
 				  <label class="col-lg-3 control-label">Fullname:</label>
 				  <div class="col-lg-8">
-					<input class="form-control" value="{{profile.fullname}}" type="text">
+					<input class="form-control" value="Jane" type="text">
 				  </div>
 				</div>
 				<div class="form-group">
 				  <label class="col-lg-3 control-label">Username:</label>
 				  <div class="col-lg-8">
-					<input class="form-control" value="{{profile.username}}" type="text">
+					<input class="form-control" value="Bishop" type="text">
 				  </div>
 				</div>
 				<div class="form-group">
 				  <label class="col-lg-3 control-label">Email:</label>
 				  <div class="col-lg-8">
-				  	{{#each emails}}
-						<input type="email" class="form-control" id="email" value="{{address}}" placeholder="E-mail">
-					{{/each}}
+					<input class="form-control" value="janesemail@gmail.com" type="text">
 				  </div>
 				</div>
 				<div class="form-group">
-				  <label class="col-md-3 control-label">Current Password:</label>
+				  <label class="col-md-3 control-label">Password:</label>
 				  <div class="col-md-8">
-					<input class="form-control" id="currentpassword" value="" type="password">
+					<input class="form-control" value="11111122333" type="password">
 				  </div>
 				</div>
 				<div class="form-group">
-				  <label class="col-md-3 control-label">New password:</label>
+				  <label class="col-md-3 control-label">Confirm password:</label>
 				  <div class="col-md-8">
-					<input class="form-control" id="newpassword" value="" type="password">
-				  </div>
-				</div>
-				<div class="form-group">
-				  <label class="col-md-3 control-label">Conform password:</label>
-				  <div class="col-md-8">
-					<input class="form-control" id ="conformpassword" value="" type="password">
+					<input class="form-control" value="11111122333" type="password">
 				  </div>
 				</div>
 				<div class="form-group">
@@ -141,15 +131,9 @@
 				  </div>
 				</div>
 			  </form>
-			  </div>
-			  {{/each}}
 			</div>
-			</div>
-			</div>
+		  <!-- </div> -->
+		</div>
+    </div>
     <!-- end:wrapper -->
-
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="js/themes.js"></script>
-
 </template>
