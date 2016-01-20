@@ -114,8 +114,21 @@
                                         
                                        
 										 <td>
-											 
-                                            <button class="btn btn-info btn-xs" id="like"><span class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary"></span></button>  
+				<!-- <div class="col-xs-3 text-left">
+                  <h5 class="gray">{{totalLike}} like</h5>
+                </div>	 
+                <div class="col-xs-3 text-left">
+
+                  <a href="" class="socail">
+                  <span id="{{_id}}" class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary{{getstatus}} likeUnlike {{_id}}" aria-hidden="true" style="color:{{getColor}}">
+                  <span style="color:#000;">Like</span></span></a>
+                </div> -->
+                                            <div class="col-xs-3 text-left">
+                                                <h5 class="gray">{{totalLike}}</h5>
+                                            </div>
+                                            <button class="btn btn-info btn-xs" id="like">
+                                                <span id="{{_id}}" class="glyphicon btn-glyphicon glyphicon-thumbs-up img-circle text-primary{{getstatus}} likeUnlike {{_id}}" aria-hidden="true" style="color:{{getColor}}"></span>
+                                            </button>  
                                         </td>
 										
 										<td>

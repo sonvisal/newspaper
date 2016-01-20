@@ -1,5 +1,4 @@
 
-
 Router.configure({
     layoutTemplate: 'mainLayout'
 });
@@ -12,6 +11,9 @@ Router.route('/article', {
 
 Router.route('/managepost', {
     name: 'managepost'
+});
+Router.route('/view', {
+    name: 'view'
 });
 
 Router.route('/register', {

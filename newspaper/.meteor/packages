@@ -24,3 +24,7 @@ accounts-ui
 accounts-password
 alanning:roles
 copleykj:livestamp
+sanjo:jasmine
+velocity:html-reporter
+xolvio:cucumber
+velocity:console-reporter
