@@ -1,4 +1,3 @@
-
 Router.configure({
     layoutTemplate: 'mainLayout'
 });
@@ -22,7 +21,7 @@ Router.route('/register', {
 Router.route('/login', {
     name: 'login'
 });
-Router.route('/admin', {
+Router.route('/manageuser', {
     name: 'manageuser'
 });
 Router.route('/comments/:_id', {
