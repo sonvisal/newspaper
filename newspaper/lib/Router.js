@@ -34,7 +34,9 @@ Router.route('/comments/:_id', {
 Router.route("/profile",{
 	name:"profile"
 });
-
+Router.route("/toparticle",{
+    name:"toparticle"
+});
 Router.route('/article/edit/:_id', {
     name: 'updatearticle',
     data:function(){
