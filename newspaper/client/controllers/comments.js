@@ -14,7 +14,7 @@ Template.comments.events({
         else{
 		Meteor.call('addcomment', name,txt,date,article_id);
 		Router.go('/');
-		}
+	}
   }
   
   });
