@@ -38,7 +38,11 @@ Template.home.helpers({
 });
 Session.set('like_login',"");
 Template.home.events({
-	
+	"click #like": function(){
+          console.log(this._id);
+          Session.set('like_login',this._id);
+          Router.go('login');
+    },
 	'click .glyphicon-thumbs-up':function(e){
         e.preventDefault();
         var content_id = this._id;
