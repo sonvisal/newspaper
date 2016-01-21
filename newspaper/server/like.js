@@ -16,9 +16,9 @@ Meteor.methods({
   		return like.remove({contentId:content_id, user:userId});
  	},
  	addlike:function(content_id,sum){
-    var arrt={
-      like:like
+    var attr={
+      like:sum
     }
- 		return article.update({_id:content_id,$set: {arrt}});
+ 		return article.update({_id:content_id,$set:{attr}});
  	}
 });

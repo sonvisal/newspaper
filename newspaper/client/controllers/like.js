@@ -38,11 +38,11 @@ Template.home.helpers({
 });
 Session.set('like_login',"");
 Template.home.events({
-	"click #like": function(){
-          console.log(this._id);
-          Session.set('like_login',this._id);
-          Router.go('login');
-    },
+	// "click #like": function(){
+ //          console.log(this._id);
+ //          Session.set('like_login',this._id);
+ //          Router.go('login');
+ //    },
 	'click .glyphicon-thumbs-up':function(e){
         e.preventDefault();
         var content_id = this._id;
@@ -67,11 +67,16 @@ Template.home.events({
                 result.forEach(function(transaction){
                 sum = sum + transaction.status;
             });
-            alert(sum);
-            alert(content_id);
-            Meteor.call("addlike",content_id,sum);
-            alert("seccess");
+            console.log(sum);
+            console.log(content_id);
+            Meteor.call("addlike",content_id,sum,function(error){
+                if(error){
+                    console.log(error);
+                }else{
+                    console.log("successfull like article");
+                }
 
+            });
         }
     },
     'click .glyphicon-heart':function(e){
